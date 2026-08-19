@@ -473,7 +473,7 @@
         <li><span class="k">Ngân hàng</span><span class="v">TPBank</span></li>
         <li><span class="k">Số tài khoản</span><span class="v">06122170201 <button type="button" class="copy-btn" data-copy="06122170201">Sao chép</button></span></li>
         <li><span class="k">Chủ tài khoản</span><span class="v">DAO VAN CHINH</span></li>
-        <li><span class="k">Số tiền</span><span class="v amount">499.000đ</span></li>
+        <li><span class="k">Số tiền</span><span class="v amount" id="qr-amount">499.000đ</span></li>
         <li><span class="k">Nội dung CK</span><span class="v des"><span id="qr-des">PHKG</span> <button type="button" class="copy-btn" id="copy-des">Sao chép</button></span></li>
       </ul>
 
@@ -504,7 +504,7 @@
 <script>
 (function(){
   "use strict";
-  var ACC = "06122170201", BANK = "TPBank", AMOUNT = "499000", PREFIX = "PHKG";
+  var ACC = "06122170201", BANK = "TPBank", AMOUNT = "10000", PREFIX = "PHKG"; // TEST: 10.000đ — đổi lại "499000" khi bán thật
   var form = document.getElementById("reg-form");
   var result = document.getElementById("reg-result");
   if(!form) return;
@@ -521,6 +521,7 @@
                 "&amount=" + AMOUNT + "&des=" + encodeURIComponent(des) + "&template=compact";
 
     document.getElementById("qr-name").textContent = name;
+    document.getElementById("qr-amount").textContent = parseInt(AMOUNT,10).toLocaleString("vi-VN") + "đ";
     document.getElementById("qr-des").textContent = des;
     document.getElementById("copy-des").setAttribute("data-copy", des);
     var img = document.getElementById("qr-img");
