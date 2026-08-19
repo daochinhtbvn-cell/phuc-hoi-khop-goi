@@ -164,12 +164,10 @@
   }
   .avatar{
     flex:0 0 auto;
-    width:92px;height:92px;border-radius:50%;
-    background:linear-gradient(150deg,var(--blue),#0a4f66);
-    color:#fff;font-weight:900;font-size:2rem;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:var(--shadow);
-    letter-spacing:.02em;
+    width:118px;height:118px;border-radius:50%;
+    object-fit:cover;object-position:50% 15%;
+    box-shadow:0 0 0 4px #fff, 0 0 0 8px var(--blue), 0 10px 24px rgba(0,0,0,.20);
+    background:var(--blue-soft);
   }
   .author .who{flex:1 1 220px;min-width:200px}
   .author .who .name{font-weight:900;font-size:1.3rem;margin:0 0 2px}
@@ -342,7 +340,7 @@
 <section class="wrap">
   <p class="kicker">Người đồng hành cùng bạn</p>
   <div class="author">
-    <div class="avatar" aria-hidden="true">ĐC</div>
+    <img class="avatar" src="anh-chinh.jpg" alt="Đào Văn Chính" width="118" height="118">
     <div class="who">
       <p class="name">Đào Văn Chính</p>
       <p class="role">Chuyên gia chăm sóc sức khỏe xương khớp chủ động</p>
