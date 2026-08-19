@@ -190,6 +190,31 @@
   .qa .item .a{margin:0;color:var(--muted);font-weight:600}
   .qa .item .a::before{content:"→ ";color:var(--green);font-weight:900}
 
+  /* ---------- value stack + offer ---------- */
+  .value-intro{background:var(--paper);border-left:5px solid var(--red);border-radius:0 12px 12px 0;
+    padding:18px 20px;margin-top:8px;font-weight:600;line-height:1.6}
+  .value-intro strong{color:var(--red-dark)}
+  .vstack{margin-top:22px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .vrow{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;
+    padding:15px 18px;border-bottom:1px solid var(--line);background:#fff}
+  .vrow:last-child{border-bottom:0}
+  .vrow .vname{font-weight:700;line-height:1.4}
+  .vrow .vprice{flex:0 0 auto;font-weight:800;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .vrow.main{background:var(--green-soft)}
+  .vrow .vprice.free{color:var(--blue)}
+  .vtotal{display:flex;justify-content:space-between;gap:14px;align-items:center;
+    background:#17181c;color:#fff;border-radius:14px;padding:18px 20px;margin-top:14px}
+  .vtotal .lbl{font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:.9rem;line-height:1.25}
+  .vtotal .amt{font-weight:900;font-size:1.35rem;color:#ffd24a;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .offer-box{margin-top:22px;border:3px dashed var(--cta1);border-radius:18px;background:#fffdf5;
+    padding:26px 20px;text-align:center}
+  .offer-box .old{color:var(--muted);text-decoration:line-through;font-weight:700;font-size:1.05rem}
+  .offer-box .headline{color:var(--red);font-weight:900;font-size:1.2rem;margin:12px 0 8px;
+    line-height:1.3;text-wrap:balance}
+  .offer-box .offer-price{color:var(--red);font-weight:900;font-size:clamp(2.8rem,13vw,3.8rem);
+    line-height:1;font-variant-numeric:tabular-nums}
+  .offer-box .offer-price small{font-size:1.5rem;font-weight:800;vertical-align:top}
+
   /* ---------- price ---------- */
   .price-wrap{text-align:center}
   .price-card{
@@ -415,6 +440,52 @@
   <p class="kicker">Vì sao mức giá này</p>
   <h2>Tại sao tôi để mức học phí <span class="rd">dễ tiếp cận</span>?</h2>
   <p class="lead-center">Bởi vì mục tiêu của tôi là chăm sóc sức khỏe chủ động cho <strong>càng nhiều người càng tốt</strong>. Một khóa học online cho phép tôi hướng dẫn đúng cách đến hàng nghìn người, mà không ai phải trả mức chi phí quá cao. Tôi muốn kiến thức chăm sóc khớp gối đến được với những người thật sự cần — kể cả các cô chú lớn tuổi.</p>
+</section>
+
+<hr class="divider">
+
+<!-- P7 + P15: Giá trị & Ưu đãi -->
+<section class="wrap">
+  <p class="kicker big solo">Bạn tiết kiệm được bao nhiêu?</p>
+
+  <div class="value-intro">
+    Bạn biết không, <strong>1 buổi trị liệu phục hồi chức năng</strong> ngoài kia đang có giá từ <strong>500.000đ – 1.000.000đ</strong>. Mỗi liệu trình kéo dài <strong>10–15 ngày</strong>, nghĩa là bạn phải chi từ <strong>5.000.000đ đến 15.000.000đ</strong> — mà vẫn phải đi lại vất vả, phụ thuộc lịch hẹn.
+  </div>
+
+  <div class="vstack">
+    <div class="vrow main">
+      <div class="vname">✅ Khóa Đồng Hành Phục Hồi Khớp Gối</div>
+      <div class="vprice">5.000.000đ</div>
+    </div>
+    <div class="vrow">
+      <div class="vname">🎁 Quà tặng 1: Dinh dưỡng vàng chăm sóc xương khớp</div>
+      <div class="vprice">1.800.000đ</div>
+    </div>
+    <div class="vrow">
+      <div class="vname">🎁 Quà tặng 2: Hiểu và giải quyết đau mỏi cổ vai gáy</div>
+      <div class="vprice">1.686.000đ</div>
+    </div>
+    <div class="vrow">
+      <div class="vname">🎁 Quà tặng 3: Ebook thực sự hiểu về thoát vị đĩa đệm</div>
+      <div class="vprice">1.386.000đ</div>
+    </div>
+    <div class="vrow">
+      <div class="vname">👥 Nhóm Zalo VIP hỗ trợ đồng hành</div>
+      <div class="vprice free">Vô giá</div>
+    </div>
+  </div>
+
+  <div class="vtotal">
+    <span class="lbl">Tổng giá trị thực nhận</span>
+    <span class="amt">9.872.000đ</span>
+  </div>
+
+  <div class="offer-box">
+    <div class="old">Tổng giá trị thật 9.872.000đ</div>
+    <div class="headline">🔥 GIÁ ƯU ĐÃI ĐỒNG HÀNH CHO 50 NGƯỜI ĐẦU TIÊN</div>
+    <div class="offer-price">499.000<small>đ</small></div>
+    <a class="cta-btn" href="#dang-ky" style="margin-top:20px">👉 ĐĂNG KÝ TẬP NGAY</a>
+  </div>
 </section>
 
 <hr class="divider">
