@@ -1,0 +1,532 @@
+<title>Phục Hồi Khớp Gối</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600&display=swap">
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --paper:#faf8f4;
+    --ink:#1e1e1e;
+    --muted:#55524c;
+    --red:#c1272d;
+    --red-dark:#96161b;
+    --yellow:#ffe86b;
+    --green:#12854a;
+    --green-soft:#eaf6ee;
+    --blue:#0e6e8c;
+    --blue-soft:#e8f4f8;
+    --cta1:#ff6a00;
+    --cta2:#e23400;
+    --line:#e7e2d8;
+    --shadow:0 8px 28px rgba(0,0,0,.10);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:84px;
+  }
+  @media(min-width:820px){ body{padding-bottom:0} }
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* ---------- top ribbon ---------- */
+  .ribbon{
+    background:var(--red);
+    color:#fff;
+    text-align:center;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-size:.78rem;
+    padding:9px 16px;
+    line-height:1.4;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:38px 0 8px;text-align:center}
+  .eyebrow{
+    display:inline-block;
+    color:var(--red);
+    font-weight:800;
+    font-size:.82rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    border:2px solid var(--red);
+    border-radius:999px;
+    padding:5px 16px;
+    margin-bottom:22px;
+  }
+  h1{
+    font-weight:900;
+    font-size:clamp(1.9rem,6.4vw,3rem);
+    line-height:1.12;
+    letter-spacing:-.01em;
+    margin:0 0 18px;
+    text-wrap:balance;
+  }
+  h1 .hl{background:linear-gradient(180deg,transparent 55%,var(--yellow) 55%);padding:0 .12em}
+  h1 .rd{color:var(--red)}
+  .subhead{
+    font-size:clamp(1.05rem,2.6vw,1.28rem);
+    font-weight:600;
+    color:var(--muted);
+    max-width:44ch;
+    margin:0 auto;
+    text-wrap:balance;
+  }
+
+  /* ---------- section rhythm ---------- */
+  section{padding:30px 0}
+  .divider{height:2px;background:var(--line);border:0;max-width:760px;margin:0 auto}
+  h2{
+    font-weight:900;
+    font-size:clamp(1.4rem,4.4vw,2rem);
+    line-height:1.18;
+    letter-spacing:-.01em;
+    text-align:center;
+    margin:0 0 8px;
+    text-wrap:balance;
+  }
+  h2 .rd{color:var(--red)}
+  .kicker{
+    text-align:center;
+    color:var(--red);
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.8rem;
+    margin:0 0 10px;
+  }
+  .kicker.big{
+    font-size:clamp(1.4rem,4.4vw,2rem);
+    font-weight:900;
+    letter-spacing:.02em;
+    line-height:1.18;
+    margin:0 0 6px;
+    text-wrap:balance;
+  }
+  p{margin:0 0 16px}
+  .lead-center{text-align:center;max-width:56ch;margin-left:auto;margin-right:auto}
+  strong{font-weight:800}
+  em.q{font-style:italic;color:var(--red-dark);font-weight:600}
+
+  /* ---------- lists ---------- */
+  ul.clean{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:13px}
+  ul.clean li{position:relative;padding-left:40px;font-weight:600}
+  ul.clean li::before{
+    content:"✔";
+    position:absolute;left:0;top:-1px;
+    width:26px;height:26px;border-radius:50%;
+    background:var(--green-soft);color:var(--green);
+    font-size:.86rem;font-weight:900;
+    display:flex;align-items:center;justify-content:center;
+  }
+  ul.pain{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+  ul.pain li{position:relative;padding-left:40px;font-weight:600}
+  ul.pain li::before{
+    content:"✕";
+    position:absolute;left:0;top:-1px;
+    width:26px;height:26px;border-radius:50%;
+    background:#fdeaea;color:var(--red);
+    font-size:.82rem;font-weight:900;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- boxes ---------- */
+  .box{
+    background:var(--paper);
+    border:2px dashed var(--red);
+    border-radius:14px;
+    padding:26px 24px;
+    margin-top:8px;
+  }
+  .box-green{background:var(--green-soft);border-color:var(--green)}
+
+  /* ---------- author card ---------- */
+  .author{
+    background:var(--blue-soft);
+    border:1px solid #cfe6ee;
+    border-radius:16px;
+    padding:26px 24px;
+    display:flex;gap:20px;align-items:center;
+    flex-wrap:wrap;
+  }
+  .avatar{
+    flex:0 0 auto;
+    width:92px;height:92px;border-radius:50%;
+    background:linear-gradient(150deg,var(--blue),#0a4f66);
+    color:#fff;font-weight:900;font-size:2rem;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow);
+    letter-spacing:.02em;
+  }
+  .author .who{flex:1 1 220px;min-width:200px}
+  .author .who .name{font-weight:900;font-size:1.3rem;margin:0 0 2px}
+  .author .who .role{color:var(--blue);font-weight:700;font-size:.95rem;margin:0}
+  .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
+  .stat{
+    background:#fff;border:1px solid #cfe6ee;border-radius:12px;
+    padding:12px 16px;flex:1 1 150px;text-align:center;
+  }
+  .stat .n{font-weight:900;font-size:1.5rem;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums}
+  .stat .t{font-size:.82rem;color:var(--muted);font-weight:600;margin-top:5px;display:block}
+
+  /* ---------- objections ---------- */
+  .qa{display:flex;flex-direction:column;gap:16px;margin-top:22px}
+  .qa .item{border-left:4px solid var(--red);background:var(--paper);border-radius:0 12px 12px 0;padding:16px 20px}
+  .qa .item .q{font-weight:800;margin:0 0 6px}
+  .qa .item .q::before{content:"“";color:var(--red);font-weight:900}
+  .qa .item .q::after{content:"”";color:var(--red);font-weight:900}
+  .qa .item .a{margin:0;color:var(--muted);font-weight:600}
+  .qa .item .a::before{content:"→ ";color:var(--green);font-weight:900}
+
+  /* ---------- price ---------- */
+  .price-wrap{text-align:center}
+  .price-card{
+    display:inline-block;
+    background:var(--paper);
+    border:3px solid var(--red);
+    border-radius:18px;
+    padding:28px 40px;
+    box-shadow:var(--shadow);
+    margin-top:6px;
+  }
+  .price-label{font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-size:.82rem}
+  .price-num{font-weight:900;font-size:clamp(2.6rem,10vw,3.6rem);color:var(--red);line-height:1;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+  .price-num small{font-size:1.2rem;font-weight:800;vertical-align:top}
+  .price-sub{color:var(--muted);font-weight:600;font-size:.95rem}
+
+  /* ---------- CTA ---------- */
+  .cta-btn{
+    display:block;width:100%;max-width:520px;margin:22px auto 10px;
+    background:linear-gradient(180deg,var(--cta1),var(--cta2));
+    color:#fff;text-decoration:none;text-align:center;
+    font-weight:900;font-size:clamp(1.1rem,3.4vw,1.35rem);
+    letter-spacing:.01em;
+    padding:20px 24px;border-radius:14px;
+    box-shadow:0 10px 26px rgba(226,52,0,.38);
+    line-height:1.25;
+    transition:transform .12s ease,box-shadow .12s ease;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  .cta-btn small{display:block;font-weight:700;font-size:.78rem;opacity:.95;margin-top:5px;letter-spacing:.04em}
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(226,52,0,.46)}
+  .cta-btn:focus-visible{outline:4px solid #ffca8a;outline-offset:3px}
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.018)}}
+  @media(prefers-reduced-motion:reduce){.cta-btn{animation:none}}
+  .cta-note{text-align:center;color:var(--muted);font-weight:600;font-size:.9rem}
+  button.cta-btn{border:0;cursor:pointer;font-family:inherit}
+
+  /* ---------- form ---------- */
+  .reg-form{max-width:460px;margin:24px auto 0;text-align:left;display:flex;flex-direction:column;gap:14px}
+  .reg-form label{font-weight:800;font-size:.92rem;display:block;margin-bottom:6px}
+  .reg-form input{
+    width:100%;font-family:inherit;font-size:1.05rem;
+    padding:14px 16px;border:2px solid var(--line);border-radius:12px;
+    background:#fff;color:var(--ink);
+  }
+  .reg-form input:focus{outline:0;border-color:var(--red);box-shadow:0 0 0 4px rgba(193,39,45,.12)}
+  .reg-form .field{margin:0}
+
+  /* ---------- qr result ---------- */
+  .qr-result{max-width:500px;margin:26px auto 0;text-align:center;
+    background:#fff;border:3px solid var(--green);border-radius:18px;
+    padding:26px 22px;box-shadow:var(--shadow)}
+  .qr-result h3{font-weight:900;font-size:1.3rem;margin:0 0 4px}
+  .qr-result h3 .rd{color:var(--green)}
+  .qr-result .sub{color:var(--muted);font-weight:600;margin:0 0 18px}
+  .qr-img-box{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px;min-height:180px}
+  .qr-img-box img{display:block;width:230px;height:auto;max-width:100%}
+  .qr-fallback{font-size:.85rem;color:var(--muted);font-weight:600;max-width:220px;margin:8px auto 0;line-height:1.4}
+  .bank-table{list-style:none;margin:20px 0 0;padding:0;text-align:left;
+    border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .bank-table li{display:flex;justify-content:space-between;gap:14px;
+    padding:12px 16px;border-bottom:1px solid var(--line);font-size:.98rem}
+  .bank-table li:last-child{border-bottom:0}
+  .bank-table .k{color:var(--muted);font-weight:700;flex:0 0 auto}
+  .bank-table .v{font-weight:800;text-align:right;word-break:break-word}
+  .bank-table .v.amount{color:var(--red);font-size:1.15rem}
+  .bank-table .v.des{color:var(--green)}
+  .copy-btn{margin-left:8px;border:1px solid var(--line);background:var(--paper);
+    border-radius:8px;padding:3px 9px;font-size:.75rem;font-weight:800;cursor:pointer;
+    font-family:inherit;color:var(--ink);white-space:nowrap}
+  .copy-btn:hover{background:#efe9dc}
+  .qr-hint{margin:18px 0 0;font-weight:700;font-size:.92rem;background:var(--green-soft);
+    color:var(--green);border-radius:10px;padding:12px 14px;line-height:1.45}
+
+  .final{background:var(--paper);border-top:3px solid var(--red);border-bottom:3px solid var(--red)}
+
+  /* ---------- sticky mobile CTA ---------- */
+  .sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    background:#fff;border-top:1px solid var(--line);
+    padding:10px 14px;box-shadow:0 -6px 20px rgba(0,0,0,.10);
+    display:flex;gap:12px;align-items:center;justify-content:space-between;
+  }
+  .sticky .p{font-weight:900;color:var(--red);font-size:1.1rem;line-height:1;font-variant-numeric:tabular-nums}
+  .sticky .p small{display:block;font-size:.66rem;color:var(--muted);font-weight:700;letter-spacing:.04em}
+  .sticky a{
+    background:linear-gradient(180deg,var(--cta1),var(--cta2));color:#fff;
+    text-decoration:none;font-weight:900;font-size:.98rem;
+    padding:13px 18px;border-radius:11px;white-space:nowrap;
+  }
+  .sticky a:focus-visible{outline:3px solid #ffca8a;outline-offset:2px}
+  @media(min-width:820px){ .sticky{display:none} }
+
+  footer{text-align:center;color:var(--muted);font-size:.82rem;padding:26px 20px 40px}
+</style>
+
+<div class="ribbon">Dành cho người bị đau khớp gối — muốn đi lại thoải mái trở lại</div>
+
+<header class="hero wrap">
+  <span class="eyebrow">Khóa học Phục Hồi Khớp Gối</span>
+  <h1>Đi Lại <span class="hl">Thoải Mái Trở Lại</span> — Không Còn <span class="rd">Cơn Đau Gối</span> Hành Hạ Mỗi Bước Chân</h1>
+  <a class="cta-btn" href="#dang-ky">👉 ĐĂNG KÝ HỌC NGAY <small>Chỉ 499.000đ — Bắt đầu phục hồi hôm nay</small></a>
+  <p class="cta-note">Học online tại nhà · Xem lại được nhiều lần</p>
+</header>
+
+<!-- P2 -->
+<section class="wrap">
+  <p class="kicker big">Sau khóa học, bạn có thể</p>
+  <h2>Lấy lại sự <span class="rd">tự do đi lại</span> mà bạn tưởng đã mất</h2>
+  <ul class="clean">
+    <li>Lên xuống cầu thang <strong>nhẹ nhàng hơn</strong>, không còn nơm nớp sợ đau mỗi bậc.</li>
+    <li>Tự đi chợ, đi lại quanh nhà và <strong>chăm sóc bản thân</strong> mà không cần phụ thuộc.</li>
+    <li>Đi bộ, tập thể dục nhẹ trở lại để <strong>khỏe hơn mỗi ngày</strong>.</li>
+    <li>Vui chơi, bế ẵm <strong>con cháu</strong> và đi du lịch cùng gia đình.</li>
+    <li>Hiểu rõ khớp gối của mình để <strong>tránh làm nó tệ đi</strong>.</li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- P3 -->
+<section class="wrap">
+  <p class="kicker">Có phải bạn đang…</p>
+  <h2>Mỗi bước đi đều trở thành một <span class="rd">nỗi sợ</span>?</h2>
+  <ul class="pain">
+    <li>Đi lại khó khăn, muốn ra ngoài đi chợ mà cũng ngại vì gối đau.</li>
+    <li>Mỗi lần lên cầu thang là một lần phải bám vịn, nhăn mặt vì buốt.</li>
+    <li>Không thể chạy nhảy, bế ẵm hay chơi đùa cùng con cháu như mong muốn.</li>
+    <li>Bỏ lỡ những chuyến du lịch cùng gia đình vì sợ không đi nổi.</li>
+    <li>Cơn đau nhức âm ỉ <strong>triền miên</strong>, đêm nằm trằn trọc mất ngủ.</li>
+  </ul>
+  <div class="box" style="margin-top:26px">
+    <p style="margin:0;font-weight:700"><em class="q">Nếu điều đó nghe quen thuộc — bạn không hề đơn độc.</em> Rất nhiều người cũng đang sống chung với cơn đau gối mỗi ngày, chỉ vì <strong>chưa ai chỉ cho họ cách chăm sóc khớp gối đúng cách</strong>. Và tin tốt là: điều đó hoàn toàn có thể thay đổi.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- P4 -->
+<section class="wrap">
+  <p class="kicker">Người đồng hành cùng bạn</p>
+  <h2>Ai sẽ hướng dẫn bạn?</h2>
+  <div class="author">
+    <div class="avatar" aria-hidden="true">ĐC</div>
+    <div class="who">
+      <p class="name">Đào Văn Chính</p>
+      <p class="role">Chuyên gia chăm sóc sức khỏe xương khớp chủ động</p>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><span class="n">5</span><span class="t">năm trong lĩnh vực xương khớp</span></div>
+    <div class="stat"><span class="n">1.000+</span><span class="t">người đã cải thiện khả năng vận động</span></div>
+    <div class="stat"><span class="n">100%</span><span class="t">tập trung chăm sóc sức khỏe chủ động</span></div>
+  </div>
+  <p style="margin-top:20px;font-weight:600">Suốt 5 năm qua, tôi đã trực tiếp đồng hành cùng hơn một nghìn người — giúp họ cải thiện khả năng đi lại, vận động và quan trọng nhất là <strong>chủ động chăm sóc sức khỏe của chính mình</strong>, thay vì phụ thuộc mãi vào người khác.</p>
+</section>
+
+<hr class="divider">
+
+<!-- P5 -->
+<section class="wrap">
+  <p class="kicker">Vì sao tôi làm khóa học này</p>
+  <h2>Tôi hiểu cảm giác <span class="rd">bị đôi chân giới hạn</span></h2>
+  <p>Trong suốt hành trình làm nghề, tôi gặp quá nhiều người phải thu nhỏ cuộc sống của mình lại chỉ vì đầu gối: từ chối những chuyến đi, ngại xuống cầu thang, không dám bế cháu… Không phải vì họ yếu đuối, mà vì <strong>chưa ai chỉ cho họ cách chăm sóc khớp gối đúng và đều đặn</strong>.</p>
+  <p>Điều khiến tôi tin tưởng nhất là: khi được hướng dẫn từng bước, rất nhiều người đã <strong>đi lại vững vàng hơn</strong>, bớt đau và lấy lại sự tự tin trong sinh hoạt hằng ngày.</p>
+  <p style="margin-bottom:0;font-weight:800;color:var(--red-dark)">Và tôi muốn giúp bạn làm được điều tương tự — ngay tại nhà.</p>
+</section>
+
+<hr class="divider">
+
+<!-- P6 -->
+<section class="wrap">
+  <p class="kicker">Bạn nhận được gì</p>
+  <h2>Sau khóa học, <span class="rd">bạn sẽ biết cách…</span></h2>
+  <div class="box box-green">
+    <ul class="clean" style="margin-top:0">
+      <li>Tự chăm sóc khớp gối đúng cách <strong>ngay tại nhà</strong>, mỗi ngày.</li>
+      <li>Nhận biết và <strong>tránh những tư thế xấu</strong> đang âm thầm làm gối tổn thương thêm.</li>
+      <li>Lên xuống cầu thang, đi lại <strong>nhẹ nhàng và an toàn hơn</strong>.</li>
+      <li>Vận động, tập thể dục nhẹ phù hợp để <strong>khớp gối khỏe dần lên</strong>.</li>
+      <li>Chủ động chăm sóc sức khỏe bản thân, <strong>tự tin đi chơi cùng con cháu</strong>.</li>
+    </ul>
+  </div>
+  <p class="lead-center" style="margin-top:22px;font-weight:700">Đây không phải mớ lý thuyết khó hiểu — mà là những điều bạn <em class="q">áp dụng được ngay</em> cho chính đôi chân của mình.</p>
+</section>
+
+<hr class="divider">
+
+<!-- P8 -->
+<section class="wrap">
+  <p class="kicker">Có thể bạn đang băn khoăn</p>
+  <h2>Giải đáp nhanh những lo lắng thường gặp</h2>
+  <div class="qa">
+    <div class="item">
+      <p class="q">Tôi lớn tuổi rồi, đau lâu năm, liệu có tập theo được không?</p>
+      <p class="a">Khóa học đi từng bước từ dễ đến khó, phù hợp với người lớn tuổi và người đã đau lâu. Bạn tập theo sức của mình, không ép.</p>
+    </div>
+    <div class="item">
+      <p class="q">Tôi không rành công nghệ, sợ không xem được.</p>
+      <p class="a">Chỉ cần điện thoại có mạng là xem được. Cách vào học rất đơn giản, và bạn có thể nhờ con cháu mở giúp lần đầu.</p>
+    </div>
+    <div class="item">
+      <p class="q">Tôi bận, không có nhiều thời gian.</p>
+      <p class="a">Mỗi ngày chỉ cần một khoảng thời gian ngắn để chăm sóc gối. Bài học xem lại được nhiều lần, học lúc nào cũng được.</p>
+    </div>
+    <div class="item">
+      <p class="q">Tôi từng thử nhiều cách mà chưa đỡ.</p>
+      <p class="a">Phần lớn là do làm chưa đúng cách hoặc không đều. Khóa học chỉ bạn làm đúng và duy trì đều — đó là điều tạo ra khác biệt.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- P9 -->
+<section class="wrap">
+  <p class="kicker">Vì sao mức giá này</p>
+  <h2>Tại sao tôi để mức học phí <span class="rd">dễ tiếp cận</span>?</h2>
+  <p class="lead-center">Bởi vì mục tiêu của tôi là chăm sóc sức khỏe chủ động cho <strong>càng nhiều người càng tốt</strong>. Một khóa học online cho phép tôi hướng dẫn đúng cách đến hàng nghìn người, mà không ai phải trả mức chi phí quá cao. Tôi muốn kiến thức chăm sóc khớp gối đến được với những người thật sự cần — kể cả các cô chú lớn tuổi.</p>
+</section>
+
+<hr class="divider">
+
+<!-- P10 -->
+<section class="wrap">
+  <p class="kicker">Hãy thử so sánh</p>
+  <h2>Cái giá của việc <span class="rd">cứ để nguyên như vậy</span></h2>
+  <p>Mỗi tháng trôi qua mà khớp gối không được chăm sóc đúng cách, bạn vẫn tiếp tục trả một cái giá <strong>vô hình nhưng rất thật</strong>:</p>
+  <ul class="pain">
+    <li>Những cơn đau, mất ngủ và mệt mỏi kéo dài, tháng này qua tháng khác.</li>
+    <li>Những chuyến đi, buổi họp mặt gia đình bị bỏ lỡ — không mua lại được.</li>
+    <li>Sự tự tin và tự chủ trong sinh hoạt cứ hao mòn dần theo thời gian.</li>
+  </ul>
+  <p style="margin-top:22px;font-weight:800;text-align:center">So với tất cả những điều đó, việc học <strong>một lần</strong> cách tự chăm sóc đôi chân của mình cả đời — là một sự đầu tư quá xứng đáng.</p>
+</section>
+
+<!-- P11 + P16 -->
+<section class="final" id="dang-ky">
+  <div class="wrap price-wrap">
+    <p class="kicker">Học phí hôm nay</p>
+    <h2 style="margin-bottom:18px">Đầu tư cho đôi chân của bạn</h2>
+    <div class="price-card">
+      <div class="price-label">Trọn bộ khóa học</div>
+      <div class="price-num">499.000<small>đ</small></div>
+      <div class="price-sub">Học online · Xem lại nhiều lần · Áp dụng cả đời</div>
+    </div>
+
+    <form class="reg-form" id="reg-form" novalidate>
+      <div class="field">
+        <label for="hoten">Họ và tên của bạn</label>
+        <input type="text" id="hoten" name="hoten" placeholder="VD: Nguyễn Văn A" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="sdt">Số điện thoại</label>
+        <input type="tel" id="sdt" name="sdt" placeholder="VD: 0901234567" inputmode="numeric" autocomplete="tel" required>
+      </div>
+      <button type="submit" class="cta-btn" style="margin-top:6px">👉 ĐĂNG KÝ &amp; LẤY MÃ CHUYỂN KHOẢN <small>Hoàn tất trong 1 phút</small></button>
+    </form>
+    <p class="cta-note">Điền thông tin để nhận mã QR chuyển khoản học phí.</p>
+
+    <!-- Khối hiện sau khi bấm đăng ký -->
+    <div class="qr-result" id="reg-result" hidden>
+      <h3>Cảm ơn <span class="rd" id="qr-name">bạn</span> đã đăng ký! 🎉</h3>
+      <p class="sub">Quét mã QR bên dưới để chuyển khoản học phí <strong>499.000đ</strong>. Hệ thống SePay sẽ <strong>tự động xác nhận</strong> sau khi bạn chuyển.</p>
+
+      <div class="qr-img-box">
+        <img id="qr-img" alt="Mã QR chuyển khoản TPBank" width="230" height="230"
+             onerror="this.style.display='none';document.getElementById('qr-fb').style.display='block'">
+        <p class="qr-fallback" id="qr-fb" style="display:none">Mã QR sẽ hiển thị khi trang được đăng lên web thật. Bạn vẫn có thể chuyển khoản theo thông tin bên dưới.</p>
+      </div>
+
+      <ul class="bank-table">
+        <li><span class="k">Ngân hàng</span><span class="v">TPBank</span></li>
+        <li><span class="k">Số tài khoản</span><span class="v">06122170201 <button type="button" class="copy-btn" data-copy="06122170201">Sao chép</button></span></li>
+        <li><span class="k">Chủ tài khoản</span><span class="v">DAO VAN CHINH</span></li>
+        <li><span class="k">Số tiền</span><span class="v amount">499.000đ</span></li>
+        <li><span class="k">Nội dung CK</span><span class="v des"><span id="qr-des">PHKG</span> <button type="button" class="copy-btn" id="copy-des">Sao chép</button></span></li>
+      </ul>
+
+      <p class="qr-hint">⚠️ Vui lòng chuyển <strong>đúng nội dung</strong> ở trên để được xác nhận tự động. Sau khi chuyển khoản thành công, bạn sẽ nhận được thông tin khóa học.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Khóa học <strong>Phục Hồi Khớp Gối</strong> — Đào Văn Chính<br>
+  Nội dung mang tính hướng dẫn chăm sóc sức khỏe chủ động, không thay thế chẩn đoán hay điều trị y khoa.
+</footer>
+
+<!-- sticky mobile CTA -->
+<div class="sticky">
+  <div class="p">499.000đ<small>TRỌN KHÓA HỌC</small></div>
+  <a href="#dang-ky">Đăng ký ngay →</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var ACC = "06122170201", BANK = "TPBank", AMOUNT = "499000", PREFIX = "PHKG";
+  var form = document.getElementById("reg-form");
+  var result = document.getElementById("reg-result");
+  if(!form) return;
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = form.hoten.value.trim();
+    var phone = form.sdt.value.replace(/[^0-9]/g,"");
+    if(name.length < 2){ alert("Vui lòng nhập họ và tên của bạn."); form.hoten.focus(); return; }
+    if(!/^0\d{8,10}$/.test(phone)){ alert("Vui lòng nhập số điện thoại hợp lệ (VD: 0901234567)."); form.sdt.focus(); return; }
+
+    var des = PREFIX + phone;
+    var qrUrl = "https://qr.sepay.vn/img?acc=" + ACC + "&bank=" + BANK +
+                "&amount=" + AMOUNT + "&des=" + encodeURIComponent(des) + "&template=compact";
+
+    document.getElementById("qr-name").textContent = name;
+    document.getElementById("qr-des").textContent = des;
+    document.getElementById("copy-des").setAttribute("data-copy", des);
+    var img = document.getElementById("qr-img");
+    document.getElementById("qr-fb").style.display = "none";
+    img.style.display = "block";
+    img.src = qrUrl;
+
+    result.hidden = false;
+    result.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Nút sao chép
+  document.addEventListener("click", function(e){
+    var btn = e.target.closest(".copy-btn");
+    if(!btn) return;
+    var text = btn.getAttribute("data-copy") || "";
+    var done = function(){ var old = btn.textContent; btn.textContent = "Đã chép ✓"; setTimeout(function(){ btn.textContent = old; }, 1500); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(done);
+    } else {
+      var t = document.createElement("textarea"); t.value = text; document.body.appendChild(t);
+      t.select(); try{ document.execCommand("copy"); }catch(_){} document.body.removeChild(t); done();
+    }
+  });
+})();
+</script>
