@@ -262,6 +262,15 @@
   .copy-btn:hover{background:#efe9dc}
   .qr-hint{margin:18px 0 0;font-weight:700;font-size:.92rem;background:var(--green-soft);
     color:var(--green);border-radius:10px;padding:12px 14px;line-height:1.45}
+  .contact-cta{margin-top:16px;padding:16px;border-radius:12px;background:var(--paper);border:2px dashed var(--green);text-align:center}
+  .contact-cta p{margin:0 0 12px;font-weight:700;color:var(--ink);font-size:.98rem;line-height:1.5}
+  .contact-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+  .contact-btns a{flex:1 1 150px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    text-decoration:none;font-weight:800;padding:14px 16px;border-radius:11px;font-size:1rem}
+  .btn-zalo{background:#0068ff;color:#fff}
+  .btn-call{background:var(--green);color:#fff}
+  .contact-btns a:hover{filter:brightness(1.06)}
+  .contact-btns a:focus-visible{outline:3px solid #ffca8a;outline-offset:2px}
 
   .final{background:var(--paper);border-top:3px solid var(--red);border-bottom:3px solid var(--red)}
 
@@ -468,7 +477,15 @@
         <li><span class="k">Nội dung CK</span><span class="v des"><span id="qr-des">PHKG</span> <button type="button" class="copy-btn" id="copy-des">Sao chép</button></span></li>
       </ul>
 
-      <p class="qr-hint">⚠️ Vui lòng chuyển <strong>đúng nội dung</strong> ở trên để được xác nhận tự động. Sau khi chuyển khoản thành công, bạn sẽ nhận được thông tin khóa học.</p>
+      <p class="qr-hint">⚠️ Vui lòng chuyển <strong>đúng nội dung</strong> ở trên để được xác nhận tự động.</p>
+
+      <div class="contact-cta">
+        <p>📲 Sau khi chuyển khoản, vui lòng <strong>nhắn Zalo</strong> hoặc <strong>gọi</strong> cho chúng tôi (kèm ảnh chuyển khoản) để nhận <strong>thông tin khóa học ngay</strong>:</p>
+        <div class="contact-btns">
+          <a class="btn-zalo" href="https://zalo.me/0975325602" target="_blank" rel="noopener">💬 Nhắn Zalo 0975 325 602</a>
+          <a class="btn-call" href="tel:0975325602">📞 Gọi ngay</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
