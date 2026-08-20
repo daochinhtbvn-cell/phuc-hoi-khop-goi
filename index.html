@@ -226,6 +226,13 @@
   .video-testi{max-width:330px;margin:24px auto 0;aspect-ratio:9/16;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:#000}
   .video-testi iframe{width:100%;height:100%;border:0;display:block}
   .video-cap{text-align:center;color:var(--muted);font-weight:700;font-size:.92rem;margin-top:12px}
+  .guarantee{max-width:620px;margin:0 auto;background:var(--green-soft);border:3px solid var(--green);
+    border-radius:20px;padding:30px 24px;text-align:center}
+  .guarantee .shield{font-size:3.2rem;line-height:1}
+  .guarantee h3{font-weight:900;font-size:clamp(1.3rem,4.6vw,1.75rem);color:var(--green);
+    margin:10px 0 12px;line-height:1.22;text-wrap:balance}
+  .guarantee p{font-weight:600;margin:0;max-width:50ch;margin-inline:auto;line-height:1.6}
+  .guarantee p strong{color:var(--ink)}
 
   /* ---------- price ---------- */
   .price-wrap{text-align:center}
@@ -547,6 +554,17 @@
   <p class="testi-note">Ảnh chụp bình luận thật từ kênh của Đào Văn Chính — hàng nghìn người đã biết ơn.</p>
 </section>
 
+<hr class="divider">
+
+<!-- Guarantee -->
+<section class="wrap">
+  <div class="guarantee">
+    <div class="shield">🛡️</div>
+    <h3>Cam kết hoàn tiền 100% trong 7 ngày</h3>
+    <p>Bạn cứ học thử <strong>7 ngày đầu tiên</strong>. Nếu cảm thấy <strong>không nhận được giá trị gì</strong>, tôi <strong>hoàn lại 100% học phí</strong> — không hỏi lý do. Mọi rủi ro tôi chịu, <strong>bạn không mất gì cả.</strong></p>
+  </div>
+</section>
+
 <!-- P11 + P16 -->
 <section class="final" id="dang-ky">
   <div class="wrap price-wrap">
@@ -617,7 +635,7 @@
 <script>
 (function(){
   "use strict";
-  var ACC = "06122170201", BANK = "TPBank", AMOUNT = "10000", PREFIX = "PHKG"; // TEST 10.000đ — đổi lại "499000" khi bán thật
+  var ACC = "06122170201", BANK = "TPBank", AMOUNT = "499000", PREFIX = "PHKG";
   var form = document.getElementById("reg-form");
   var result = document.getElementById("reg-result");
   if(!form) return;
