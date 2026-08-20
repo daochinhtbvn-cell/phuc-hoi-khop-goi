@@ -223,6 +223,9 @@
   @media(min-width:700px){ .testi-grid{grid-template-columns:repeat(3,1fr)} }
   .testi-grid img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
   .testi-note{text-align:center;color:var(--muted);font-weight:600;font-size:.9rem;margin-top:16px}
+  .video-testi{max-width:330px;margin:24px auto 0;aspect-ratio:9/16;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:#000}
+  .video-testi iframe{width:100%;height:100%;border:0;display:block}
+  .video-cap{text-align:center;color:var(--muted);font-weight:700;font-size:.92rem;margin-top:12px}
 
   /* ---------- price ---------- */
   .price-wrap{text-align:center}
@@ -526,7 +529,13 @@
 <section class="wrap">
   <p class="kicker">Học viên nói gì</p>
   <h2>Hàng nghìn người đã <span class="rd">cảm ơn</span> sau khi tập theo</h2>
-  <p class="lead-center">Những dòng bình luận thật từ người đã áp dụng bài tập của Đào Văn Chính:</p>
+  <p class="lead-center">Xem chia sẻ thật từ học viên — bằng video và hàng nghìn bình luận cảm ơn:</p>
+
+  <div class="video-testi">
+    <iframe src="https://www.youtube.com/embed/b48dOz3sVOs" title="Học viên chia sẻ kết quả sau khi tập theo Đào Văn Chính" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+  </div>
+  <p class="video-cap">▶️ Học viên chia sẻ kết quả cải thiện sau khi tập theo Đào Văn Chính</p>
+
   <div class="testi-grid">
     <img src="phanhoi-1.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
     <img src="phanhoi-2.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
