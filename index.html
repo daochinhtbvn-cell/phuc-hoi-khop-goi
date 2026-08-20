@@ -215,6 +215,15 @@
     line-height:1;font-variant-numeric:tabular-nums}
   .offer-box .offer-price small{font-size:1.5rem;font-weight:800;vertical-align:top}
 
+  /* ---------- author photos + testimonials ---------- */
+  .author-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+  .author-photos img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow);display:block;object-fit:cover;aspect-ratio:3/4}
+  .photo-cap{text-align:center;color:var(--muted);font-weight:600;font-size:.9rem;margin-top:12px}
+  .testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+  @media(min-width:700px){ .testi-grid{grid-template-columns:repeat(3,1fr)} }
+  .testi-grid img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+  .testi-note{text-align:center;color:var(--muted);font-weight:600;font-size:.9rem;margin-top:16px}
+
   /* ---------- price ---------- */
   .price-wrap{text-align:center}
   .price-card{
@@ -377,6 +386,12 @@
     <div class="stat"><span class="n">1.000+</span><span class="t">người đã cải thiện khả năng vận động</span></div>
   </div>
   <p style="margin-top:20px;font-weight:600">Suốt 5 năm qua, tôi đã trực tiếp đồng hành cùng hơn một nghìn người — giúp họ cải thiện khả năng đi lại, vận động và quan trọng nhất là <strong>chủ động chăm sóc sức khỏe của chính mình</strong>, thay vì phụ thuộc mãi vào người khác.</p>
+
+  <div class="author-photos">
+    <img src="day-hoc-1.jpg" alt="Đào Văn Chính hướng dẫn học viên về giải phẫu xương khớp" loading="lazy">
+    <img src="day-hoc-2.jpg" alt="Đào Văn Chính trực tiếp trị liệu cho học viên" loading="lazy">
+  </div>
+  <p class="photo-cap">📸 Đào Văn Chính trực tiếp hướng dẫn &amp; trị liệu cho học viên tại phòng tập</p>
 </section>
 
 <hr class="divider">
@@ -503,6 +518,24 @@
     <li>Sự tự tin và tự chủ trong sinh hoạt cứ hao mòn dần theo thời gian.</li>
   </ul>
   <p style="margin-top:22px;font-weight:800;text-align:center">So với tất cả những điều đó, việc học <strong>một lần</strong> cách tự chăm sóc đôi chân của mình cả đời — là một sự đầu tư quá xứng đáng.</p>
+</section>
+
+<hr class="divider">
+
+<!-- Testimonials -->
+<section class="wrap">
+  <p class="kicker">Học viên nói gì</p>
+  <h2>Hàng nghìn người đã <span class="rd">cảm ơn</span> sau khi tập theo</h2>
+  <p class="lead-center">Những dòng bình luận thật từ người đã áp dụng bài tập của Đào Văn Chính:</p>
+  <div class="testi-grid">
+    <img src="phanhoi-1.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
+    <img src="phanhoi-2.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
+    <img src="phanhoi-3.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
+    <img src="phanhoi-4.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
+    <img src="phanhoi-5.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
+    <img src="phanhoi-6.jpg" alt="Phản hồi cảm ơn của học viên" loading="lazy">
+  </div>
+  <p class="testi-note">Ảnh chụp bình luận thật từ kênh của Đào Văn Chính — hàng nghìn người đã biết ơn.</p>
 </section>
 
 <!-- P11 + P16 -->
