@@ -145,10 +145,14 @@
   .float-contact{position:fixed;right:14px;bottom:98px;z-index:60;display:flex;flex-direction:column;gap:12px}
   @media(min-width:820px){ .float-contact{bottom:24px} }
   .fc{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;
-    font-weight:800;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.28);font-size:.82rem;border:2px solid #fff}
+    font-weight:800;text-decoration:none;box-shadow:0 6px 16px rgba(0,0,0,.28);font-size:.82rem;border:2px solid #fff;
+    animation:fcpulse 1.5s ease-in-out infinite}
   .fc-zalo{background:#0068ff}
-  .fc-call{background:#22a447;font-size:1.5rem;animation:pulse 2s ease-in-out infinite}
+  .fc-call{background:#22c55e}
+  .fc-call svg{width:28px;height:28px;fill:#fff;display:block}
   .fc:hover{filter:brightness(1.08)}
+  @keyframes fcpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+  @media(prefers-reduced-motion:reduce){.fc{animation:none}}
 </style>
 
 <div class="ribbon">Zoom online MIỄN PHÍ · Phục Hồi Khớp Gối · Đào Văn Chính</div>
@@ -365,7 +369,7 @@
 
 <div class="float-contact">
   <a href="https://zalo.me/0975325602" target="_blank" rel="noopener" class="fc fc-zalo" aria-label="Chat Zalo">Zalo</a>
-  <a href="tel:0975325602" class="fc fc-call" aria-label="Gọi điện">📞</a>
+  <a href="tel:0975325602" class="fc fc-call" aria-label="Gọi điện"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.53 15.53 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.2 2.21z"/></svg></a>
 </div>
 
 <script>
