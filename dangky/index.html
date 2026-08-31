@@ -74,7 +74,7 @@
 
   /* author */
   .author{background:var(--blue-soft);border:1px solid #cfe6ee;border-radius:16px;padding:24px;margin-top:8px;display:flex;gap:26px;align-items:center}
-  .author img{width:280px;height:280px;border-radius:20px;object-fit:cover;object-position:50% 18%;flex:0 0 auto;box-shadow:var(--shadow);background:#fff}
+  .author img{width:270px;aspect-ratio:3/4;height:auto;border-radius:20px;object-fit:cover;object-position:center;flex:0 0 auto;box-shadow:var(--shadow);background:#fff}
   .author .who{flex:1 1 auto;min-width:0}
   .author .name{font-weight:900;font-size:1.9rem;margin:0 0 6px}
   .author .role{color:var(--blue);font-weight:700;margin:0;font-size:1.1rem;line-height:1.4}
@@ -82,7 +82,7 @@
   .author-points li{position:relative;padding-left:34px;font-weight:600;font-size:1rem;line-height:1.4}
   .author-points li::before{content:"✔";position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);font-size:.8rem;font-weight:900;display:flex;align-items:center;justify-content:center}
   .author-points li b{color:var(--ink)}
-  @media(max-width:640px){.author{flex-direction:column;text-align:center;padding:26px 20px}.author img{width:100%;max-width:300px;height:auto;aspect-ratio:1/1}.author-points{text-align:left}}
+  @media(max-width:640px){.author{flex-direction:column;text-align:center;padding:26px 20px}.author img{width:100%;max-width:280px;height:auto;aspect-ratio:3/4}.author-points{text-align:left}}
   .author-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
   .author-photos img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow);display:block;object-fit:cover;aspect-ratio:3/4}
 
