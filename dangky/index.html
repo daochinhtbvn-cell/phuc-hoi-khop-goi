@@ -73,11 +73,16 @@
   .box-green{background:var(--green-soft);border:2px solid var(--green);border-radius:16px;padding:22px 20px;margin-top:8px}
 
   /* author */
-  .author{background:var(--blue-soft);border:1px solid #cfe6ee;border-radius:16px;padding:30px 24px;text-align:center;margin-top:8px}
-  .author img{width:210px;height:210px;border-radius:50%;object-fit:cover;object-position:50% 18%;display:block;margin:0 auto 18px;
-    box-shadow:0 0 0 5px #fff,0 0 0 10px var(--blue)}
+  .author{background:var(--blue-soft);border:1px solid #cfe6ee;border-radius:16px;padding:24px;margin-top:8px;display:flex;gap:26px;align-items:center}
+  .author img{width:280px;height:280px;border-radius:20px;object-fit:cover;object-position:50% 18%;flex:0 0 auto;box-shadow:var(--shadow);background:#fff}
+  .author .who{flex:1 1 auto;min-width:0}
   .author .name{font-weight:900;font-size:1.9rem;margin:0 0 6px}
-  .author .role{color:var(--blue);font-weight:700;margin:0;font-size:1.1rem;line-height:1.4;max-width:44ch;margin-inline:auto}
+  .author .role{color:var(--blue);font-weight:700;margin:0;font-size:1.1rem;line-height:1.4}
+  .author-points{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+  .author-points li{position:relative;padding-left:34px;font-weight:600;font-size:1rem;line-height:1.4}
+  .author-points li::before{content:"✔";position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;background:var(--green-soft);color:var(--green);font-size:.8rem;font-weight:900;display:flex;align-items:center;justify-content:center}
+  .author-points li b{color:var(--ink)}
+  @media(max-width:640px){.author{flex-direction:column;text-align:center;padding:26px 20px}.author img{width:100%;max-width:300px;height:auto;aspect-ratio:1/1}.author-points{text-align:left}}
   .author-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
   .author-photos img{width:100%;height:auto;border-radius:12px;box-shadow:var(--shadow);display:block;object-fit:cover;aspect-ratio:3/4}
 
@@ -202,9 +207,14 @@
   <h2>Người trực tiếp <span class="rd">đồng hành</span> cùng bạn</h2>
   <div class="author">
     <img src="/anh-dai-dien.jpg" alt="Đào Văn Chính">
-    <div>
+    <div class="who">
       <p class="name">Đào Văn Chính</p>
-      <p class="role">Chuyên gia chăm sóc sức khỏe xương khớp chủ động · Hơn 1.000 người đã được hướng dẫn</p>
+      <p class="role">Chuyên gia chăm sóc sức khỏe xương khớp chủ động</p>
+      <ul class="author-points">
+        <li><b>Hơn 1.000 người</b> đã được trực tiếp hướng dẫn.</li>
+        <li><b>Tập trung chuyên sâu:</b> phục hồi khớp gối, xương khớp, vận động chủ động.</li>
+        <li><b>Phương pháp:</b> hiểu đúng tình trạng – tập đúng khả năng – an toàn &amp; bền vững.</li>
+      </ul>
     </div>
   </div>
   <div class="author-photos">
