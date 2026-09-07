@@ -348,6 +348,10 @@ src="https://www.facebook.com/tr?id=935816645652575&ev=PageView&noscript=1"/></n
         <input type="tel" id="phone" name="phone" placeholder="VD: 0901 234 567" inputmode="numeric" autocomplete="tel" required>
       </div>
       <div>
+        <label for="email">Email <span style="color:var(--muted);font-weight:600">(không bắt buộc — để nhận thư xác nhận)</span></label>
+        <input type="email" id="email" name="email" placeholder="VD: tencuaban@gmail.com" autocomplete="email" inputmode="email">
+      </div>
+      <div>
         <label for="cond">Tình trạng của bạn <span style="color:var(--muted);font-weight:600">(không bắt buộc)</span></label>
         <select id="cond" name="cond">
           <option value="">— Chọn tình trạng —</option>
@@ -398,14 +402,16 @@ src="https://www.facebook.com/tr?id=935816645652575&ev=PageView&noscript=1"/></n
     var name = form.name.value.trim();
     var phone = form.phone.value.replace(/[^0-9]/g,'');
     var cond = form.cond.value;
+    var email = form.email.value.trim();
     if(name.length < 2){ alert('Vui lòng nhập họ và tên.'); form.name.focus(); return; }
     if(!/^0\d{8,10}$/.test(phone)){ alert('Vui lòng nhập số điện thoại hợp lệ (VD: 0901234567).'); form.phone.focus(); return; }
+    if(email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ alert('Email chưa đúng định dạng. Anh/chị kiểm tra lại hoặc để trống.'); form.email.focus(); return; }
 
-    // Lưu Google Sheet (best-effort, không chặn luồng vào Zalo)
+    // Lưu Google Sheet + gửi mail (best-effort, không chặn luồng vào Zalo)
     if(SAVE_URL){
       try{
         fetch(SAVE_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'},
-          body: JSON.stringify({name:name, phone:phone, cond:cond, source:'zoom-khopgoi'})});
+          body: JSON.stringify({name:name, phone:phone, email:email, cond:cond, source:'zoom-khopgoi'})});
       }catch(err){}
     }
 
